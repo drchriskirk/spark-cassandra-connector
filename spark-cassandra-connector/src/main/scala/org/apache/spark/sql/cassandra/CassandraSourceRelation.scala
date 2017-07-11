@@ -93,6 +93,8 @@ private[cassandra] class CassandraSourceRelation(
     case false => filters
   }
 
+  override def toString: String = "org.apache.spark.sql.cassandra.CassandraSourceRelation"
+
   lazy val additionalRules: Seq[CassandraPredicateRules] = {
     import CassandraSourceRelation.AdditionalCassandraPushDownRulesParam
     val sc = sqlContext.sparkContext
